@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+    
+    <link rel="stylesheet" href="Explore.css">
+    <link rel="stylesheet" href="Website.css">
+    
+  </head>
+  <body>
+    
+    <!--
+    Navigation Bar
+    -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand navbar-Logo" href="Website.html"><img src="Images/logo.jpg" alt="Oui Travel Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="Website.html" href="Website.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Explore.html">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="booking.html">Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="Booked.html">Booked</a>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+              <a class="nav-link logout-button" href="Login.html">Logout</a>
+            </li>  
+          </ul>        
+
+
+        </div>
+      </div>
+    </nav>
+    
+    <div class="search">
+      <label for="category"><strong>Find in Paris:</strong></label>
+      <select id="category">
+        <option value="accommodation.hotel">Hotels</option>
+        <option value="accommodation.guest_house">Guest Houses</option>
+        <option value="catering.restaurant">Restaurants</option>
+        <option value="catering.cafe">Cafes</option>
+      </select>
+      <button class="btn btn-primary btn-sm" onclick="searchPlaces()">Search</button>
+    </div>
+
+    <!-- 
+    MAP CONTAINER
+    -->
+    <div id="my-map"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Explore.js"></script>
+
+    <section>
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Latest News in Paris</h2>
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-dark text-white" style="background-color: #0b2e6f !important;">
+                        <tr>
+                            <th scope="col" style="width: 35%;">News</th>
+                            <th scope="col" style="width: 15%;">Date(GMT)</th>
+                            <th scope="col" style="width: 15%;">Country</th>
+                            <th scope="col" style="width: 10%;">Category</th>
+                            <th scope="col" style="width: 15%;">Publisher</th>
+                            <th scope="col" style="width: 10%;">Sentiment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="newsTableBody">
+                        <tr><td colspan="6" class="text-center p-3 text-muted">Loading news...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+  </body>
+</html>

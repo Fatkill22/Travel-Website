@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Booked Hotels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="booked.css">
+    <link rel="stylesheet" href="Website.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-Logo" href="Website.html">
+      <img src="Images/logo.jpg" alt="Oui Travel Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="Website.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="Explore.html">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="booking.html">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="Booked.html">Booked</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link logout-button" href="Login.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">My Booked Hotels</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="booking-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Hotel Name</th>
+                    <th>Date In</th>
+                    <th>Date Out</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-3">
+        <a href="Website.html" class="btn btn-secondary">Back to Website</a>
+    </div>
+</div>
+
+<script>
+fetch('Booked.php')
+.then(res => res.json())
+.then(data => {
+    const tbody = document.querySelector('#booking-table tbody');
+    tbody.innerHTML = '';
+
+    data.forEach(row => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+            <td>${row.HOTEL_NAME}</td>
+            <td>${row.DATE_IN.date.split(' ')[0]}</td>
+            <td>${row.DATE_OUT.date.split(' ')[0]}</td>
+            <td>${row.PRICE}</td>
+            <td>${row.STATUS}</td>
+            <td>
+                ${row.STATUS === 'UNPAID'
+                    ? '<button class="btn btn-warning btn-sm">Payment Pending</button>'
+                    : '<span class="text-success">Paid</span>'}
+            </td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+})
+.catch(err => console.error(err));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

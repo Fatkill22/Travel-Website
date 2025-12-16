@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.catalogue-section {
+    height: calc(100vh - 72px);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.catalogue-row {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.catalogue-col {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(80%);
+}
+
+.personal-col {
+    background-image: url('Images/personal.jpg');
+}
+
+.amadeus-col {
+    background-image: url('Images/api.jpg');
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: white !important;
+    border: 2px solid white !important;
+    
+    /* Increased button size properties */
+    padding: 20px 40px;
+    font-size: 1.5em; 
+    
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}

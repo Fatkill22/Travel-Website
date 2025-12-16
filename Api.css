@@ -1,0 +1,35 @@
+
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+}
+
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    text-align: left; 
+}
+
+th { 
+    background-color: #f2f2f2; 
+}
+
+#status { 
+    font-weight: bold; 
+    color: #cc0000; 
+    margin-top: 10px; 
+}

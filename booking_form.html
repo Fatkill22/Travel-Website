@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Confirm Your Reservation</h2>
+
+        <div class="mb-4 text-center">
+            <img id="hotel-picture" src="" alt="Selected Hotel Image" class="img-fluid rounded" style="max-height: 250px; width: auto; object-fit: cover;">
+        </div>
+        <form action="booking_form.php" method="POST">
+            <input type="hidden" id="base-price">
+            <div class="form-group">
+                <label for="hotel-id">Hotel #:</label>
+                <input type="text" id="hotel-id" name="HOTEL_NUMBER" readonly class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="hotel-name">Selected Hotel:</label>
+                <input type="text" id="hotel-name" name="HOTEL_NAME" readonly class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="date-in">Date In:</label>
+                <input type="date" id="date-in" name="DATE_IN"  onchange="calculatePrice()" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="date-out">Date Out:</label>
+                <input type="date" id="date-out" name="DATE_OUT" onchange="calculatePrice()" class="form-control">
+            </div>
+
+            <div class="form-group mt-4">
+                <p class="mb-1">Nights Booked: <span id="nights-booked" class="fw-bold">0</span></p>
+                <label>Total Price:</label>
+                <span id="total-price">--.--</span>
+                <input type="hidden" id="total-price-hidden" name="PRICE">
+            </div>
+
+            <button type="submit"class="btn btn-primary mt-3">
+                Confirm Reservation
+            </button>
+        </form>
+        <a href="Catalogue.html" class="btn btn-secondary mt-3">Back to Catalogue</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="booking_form.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Website.css">
+    <link rel="stylesheet" href="booking.css">
+  </head>
+  <body>
+    
+    <div class="Container">
+      <div class="row col-one">
+        <div class="col col-sm-12 col-lg-12">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand navbar-Logo" href="Website.html"><img src="Images/logo.jpg" alt="Oui Travel Logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Website.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Explore.html">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="booking.html">Booking</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Booked.html">Booked</a>
+                  </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto" >
+                  <li class="nav-item">
+                    <a class="nav-link logout-button" href="Login.html">Logout</a>
+                  </li>  
+                </ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    
+    <section class="catalogue-section">
+        <div class="catalogue-row">
+          <div class="catalogue-col personal-col">
+            <div class="container">
+            <button type="button" onclick="window.location.href='Catalogue.html'" class="btn">Personal Catalogue</button>
+          </div>
+        </div>
+        
+        <div class="catalogue-col amadeus-col">
+          <div class="container">
+            <button type="button" onclick="window.location.href='Api.html'" class="btn">API Catalogue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
